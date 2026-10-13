@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Contribution guide
+    url: https://github.com/suradet-ps/ptcos/blob/main/CONTRIBUTING.md
+    about: Branch workflow, code style (Biome), and the checks to run before a pull request
+  - name: Development setup
+    url: https://github.com/suradet-ps/ptcos/blob/main/README.md
+    about: Local setup (bun install, bun run dev), Supabase schema, RLS, and Vercel deployment
+  - name: Report a security vulnerability
+    url: https://github.com/suradet-ps/ptcos/blob/main/SECURITY.md
+    about: Do NOT open a public issue for vulnerabilities, report them privately instead

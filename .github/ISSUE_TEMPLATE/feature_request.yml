@@ -1,0 +1,43 @@
+name: Feature request
+description: Suggest an idea or improvement
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the idea. Please describe the problem before the solution.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What is hard, missing, or slow today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+    validations:
+      required: false
+  - type: checkboxes
+    id: constraints
+    attributes:
+      label: Project constraints
+      options:
+        - label: Every open dashboard still syncs progress updates within a second via postgres_changes.
+          required: true
+        - label: Optimistic updates still roll back on failure, so the database stays the referee.
+          required: true
+        - label: RLS stays on and the service_role key is never shipped to the client.
+          required: true
+        - label: Status labels and colors stay driven by ptc_status_catalog.
+          required: true
+        - label: No PHI, patient identifiers, or confidential institutional data.
+          required: true

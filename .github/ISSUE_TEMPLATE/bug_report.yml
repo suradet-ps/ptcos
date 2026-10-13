@@ -1,0 +1,134 @@
+name: Bug report
+description: Something is not working as it should
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping make PTCOS better. Please fill in the fields below.
+
+        A stale board or a status that jumps back after a refresh breaks the
+        huddle: the room argues about data instead of decisions. If that is
+        what you hit, say so up front.
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened?
+      description: A short, clear description of the problem.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open ...
+        2. Update ...
+        3. See ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: Include the error message shown in the app, if any.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area affected
+      description: Which part of the app is involved?
+      options:
+        - Dashboard and summary cards
+        - Action updates and status
+        - Realtime sync across dashboards
+        - Gantt chart
+        - Meetings (list and detail)
+        - Agenda and printable reports
+        - Login and users
+        - Setup and configuration
+        - Other
+    validations:
+      required: false
+  - type: input
+    id: subject
+    attributes:
+      label: Action or meeting involved
+      description: If a specific action item or meeting is involved, name it.
+      placeholder: "e.g. Action 3, or ประชุมครั้งที่ 2/2569"
+    validations:
+      required: false
+  - type: dropdown
+    id: action_status
+    attributes:
+      label: Action status shown
+      description: If the bug involves a status, which one was displayed?
+      options:
+        - Not started
+        - In progress
+        - Completed
+        - Delayed
+        - Blocked
+        - Not applicable
+    validations:
+      required: false
+  - type: dropdown
+    id: role
+    attributes:
+      label: Role
+      description: Which role were you signed in as?
+      options:
+        - Admin
+        - Editor
+        - Viewer
+        - Not applicable
+    validations:
+      required: true
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      options:
+        - Chrome
+        - Edge
+        - Firefox
+        - Safari
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options:
+        - Windows
+        - macOS
+        - Linux
+        - iOS
+        - Android
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version / deployment
+      description: The commit, Vercel deployment, or approximate date you were using.
+      placeholder: "e.g. 0071ca0 or 2026-10-13"
+    validations:
+      required: false
+  - type: textarea
+    id: logs
+    attributes:
+      label: Screenshots, console output, or extra context
+      description: Paste relevant screenshots or browser console output. Never paste Supabase keys (anon or service_role), the GAS Web App URL, or any patient or confidential institutional data.
+      render: text
+    validations:
+      required: false
